@@ -18,7 +18,7 @@ function Header() {
     return (
         <div className="header">
             <Link to="/">
-                <img className="header__logo" src="https://lh3.googleusercontent.com/proxy/mHm9iDpI_xxfJQpbYk42saIk3B3ymDe2V7RDs7cpD5I_Vo0TtSzFVP7g2b08quIitAupbn-74VF8NlRk47WXz-z-bB7gv4gUZg" alt=""/>
+                <img className="header__logo" src="https://pngimg.com/uploads/amazon/amazon_PNG25.png" alt=""/>
             </Link>
             
             <div className="header__search">
@@ -29,21 +29,23 @@ function Header() {
                 <Link to={!user && '/login'}>
                     <div onClick={handleAuthentication} className="header__option">
                         <span className="header__optionLineOne">
-                            Hello {user.email}
+                            Hello {!user ? 'Guest' : user.email}
                         </span>
                         <span className="header__optionLineTwo">
                             {user ? 'Sign Out' : 'Sign in'}
                         </span>
                     </div>
                 </Link>
-                <div className="header__option">
-                    <span className="header__optionLineOne">
-                        Returns
-                    </span>
-                    <span className="header__optionLineTwo">
-                        & Orders
-                    </span>
-                </div>
+                <Link to="/orders">
+                    <div className="header__option">
+                        <span className="header__optionLineOne">
+                            Returns
+                        </span>
+                        <span className="header__optionLineTwo">
+                            & Orders
+                        </span>
+                    </div>
+                </Link>
                 <div className="header__option">
                     <span className="header__optionLineOne">
                         Your
